@@ -1,38 +1,328 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+    width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+    margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.primary-text{
+    color: #56a79a;
 }
 
-.App-link {
-  color: #61dafb;
+.primary-background{
+    background: #56a79a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#main-header{
+    border-bottom: 1px solid #56a79a;
+    padding: 0.7em 0;
+}
+
+#navbar{
+    text-transform: uppercase;
+    transition: all 1s ease;
+}
+
+
+#navbar li{
+    display: inline;
+    padding-right: 20px;
+    list-style: none;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: #888;
+}
+
+#navbar li.current a,
+#navbar a:hover{
+    color: #56a79a;
+    border-bottom: 3px solid #56a79a;
+    padding-bottom: 3px;
+}
+
+/*Hero*/
+#showcase{
+    background: url("./images/hero.jpg") no-repeat center center;
+    border-bottom: 1px solid #56a79a;
+    margin-bottom: 30px;
+}
+
+#showcase .row{
+    height: 600px;
+}
+
+#showcase h1{
+    font-size: 50px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+#showcase p{
+    color: #ccc;
+}
+
+#showcase .showcase-content{
+    background: #333;
+    color: #fff;
+    border-radius: 90px;
+    padding: 40px;
+    opacity: 0.9;
+}
+
+label #btn,
+label #cancel{
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    color: red;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/*FEATURES*/
+
+#features h2{
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+#features p{
+    color: #888;
+    margin-bottom: 40px;
+}
+
+#features i{
+    font-size: 60px;
+    color: #56a79a;
+}
+
+/*INFO*/
+
+#info{
+    max-height: 100em;
+    background: #333333 url("images/info.jpg");
+    background-size: 100%;
+    color: #fff;
+}
+
+#info img{
+    width: 250px;
+    padding: 3em 0;
+}
+
+#info h2{
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+#info ul{
+    list-style: none;
+}
+
+#info li{
+    line-height: 2em;
+    font-size: 20px;
+}
+
+/*COMPANY*/
+
+#company{
+    background: #333333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+#company h4{
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+#company ul{
+    list-style: none;
+    line-height: 2em;
+}
+
+#company input[type = "text"]{
+    padding: 7px;
+}
+
+#company button{
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+/*FOOTER*/
+
+#main-footer{
+    background: #56a79a;
+    color: #ffffff;
+    padding: 1em;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 860px) {
+    /*#main-header h1{*/
+    /*    margin-left: 30px;*/
+    /*}*/
+}
+
+@media (max-width: 800px) {
+    #showcase h1{
+        font-size: 30px;
+    }
+
+    #main-header h1{
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    #showcase .showcase-content{
+        padding: 40px 10px;
+    }
+}
+
+
+header{
+    min-height: 30px;
+    background: white;
+    /*background: linear-gradient(-45deg, #00537e, #3aa17e);*/
+
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+#close i{
+    color: #333333;
+}
+
+header .container{
+    padding: 15px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switcher{
+    position: absolute;
+    visibility: hidden;
+    left: -9999px;
+}
+
+header label{
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+
+}
+
+#main-menu ul{
+    list-style-type: none;
+    display: flex;
+}
+
+#main-menu ul a{
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    padding: 0 3vmin;
+    transition: all .5s;
+}
+
+#main-menu ul a:hover{
+    color: #3498db;
+}
+
+@media screen and (max-width: 600px){
+    /*MENU*/
+
+    #open,
+    #close{
+        display: block;
+    }
+
+    #close{
+        position: absolute;
+        top: 0.5em;
+        right: 0.7em;
+    }
+
+    .switcher:checked ~ nav{
+        right: 0;
+        z-index: 1;
+    }
+
+    nav{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-180deg, #00537e, #3aa17e);
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 200px 0;
+        transition: 0.5s;
+    }
+
+    #main-menu ul {
+        flex-direction: column;
+        margin-top: -55px;
+    }
+
+    #main-menu ul li a{
+        padding: 30px;
+        color: whitesmoke;
+        font-size: 20px;
+    }
+
+    #main-menu ul li a:hover{
+        background-color: rgba(255,255,255,0.03);
+    }
+
+    #main-menu h1{
+        padding-left: 10px;
+    }
+
+    /*INFO*/
+
+    #info {
+        padding-bottom: 35px;
+    }
+
+    /*COMPANY*/
+
+    #company {
+        text-align: center;
+    }
+
+    #company ul{
+        padding-bottom: 20px;
+    }
+
+    #company p{
+        padding-bottom: 20px;
+    }
 }
